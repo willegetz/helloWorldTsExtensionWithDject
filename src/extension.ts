@@ -1,26 +1,45 @@
 import * as vscode from 'vscode';
 import container from './container';
 
-const activate = function (context: vscode.ExtensionContext) {
+module ExtensionActivation {
 
-	const sample = container.build('sample');
-	sample.run();
+	// constructor(functionName: string){
+	// 	console.log('In the constructor of ExtensionActivation for ' + functionName);
+	// }
 
-	// Activating extension 'spike.helloworld' failed: Unable to parse arguments from function or expression: Sample.
-	// Command 'Hello World' resulted in an error (command 'helloworld.helloWorld' not found)
+	export function getActivateEvent() {
+		return function (context: vscode.ExtensionContext) {
 
-	console.log('Congratulations, your extension "helloworld" is now active!');
+			// const sample = container.build('sample')();
+			// sample.run();
 
-	let disposable = vscode.commands.registerCommand('helloworld.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello World from helloworld!');
-	});
+			// Activating extension 'spike.helloworld' failed: Unable to parse arguments from function or expression: Sample.
+			// Command 'Hello World' resulted in an error (command 'helloworld.helloWorld' not found)
 
-	context.subscriptions.push(disposable);
+			console.log('Congratulations, your extension "helloworld" is now active!');
+
+			let disposable = vscode.commands.registerCommand('helloworld.helloWorld', () => {
+				vscode.window.showInformationMessage('Hello World from helloworld!');
+			});
+
+			context.subscriptions.push(disposable);
+		}
+	}
+
+	export function getDeactivationEvent(){
+		return function(){
+			
+		}
+	}
+
 }
 
-const deactivate = function () { }
 
-export {
-	activate,
-	deactivate
+export function activate(context: vscode.ExtensionContext){
+	ExtensionActivation.getActivateEvent()(context);
 }
+
+export function deactivate(){
+	ExtensionActivation.getDeactivationEvent()();
+}
+
