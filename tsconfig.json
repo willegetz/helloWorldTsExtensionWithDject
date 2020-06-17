@@ -13,7 +13,7 @@
 		"strict": false,   /* enable all strict type-checking options */ // Has to be false or it won't run
 		"noImplicitAny": false, // Has to be false because the property @instantiable will prevent build
         "noImplicitReturns": true,
-        "noUnusedLocals": true,
+        "noUnusedLocals": false,
 		"noUnusedParameters": true,
 		"resolveJsonModule": true
 	},
