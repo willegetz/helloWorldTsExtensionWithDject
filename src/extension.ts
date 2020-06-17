@@ -9,7 +9,7 @@ class ExtensionActivation {
 	getActivateEvent = function () {
 		return function (context: vscode.ExtensionContext) {
 
-			// const sample = container.build('sample')();
+			const sample = container.build('sample')();
 			// sample.run();
 
 			// Activating extension 'spike.helloworld' failed: Unable to parse arguments from function or expression: Sample.
