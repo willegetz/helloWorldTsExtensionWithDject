@@ -2,10 +2,9 @@ import * as vscode from 'vscode';
 import container from './container';
 
 class ExtensionActivation {
-
-	// constructor(functionName: string){
-	// 	console.log('In the constructor of ExtensionActivation for ' + functionName);
-	// }
+	constructor(){
+		console.log('In the constructor of ExtensionActivation');
+	}
 
 	getActivateEvent = function () {
 		return function (context: vscode.ExtensionContext) {
