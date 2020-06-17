@@ -1,13 +1,13 @@
 import * as vscode from 'vscode';
 import container from './container';
 
-module ExtensionActivation {
+class ExtensionActivation {
 
 	// constructor(functionName: string){
 	// 	console.log('In the constructor of ExtensionActivation for ' + functionName);
 	// }
 
-	export function getActivateEvent() {
+	getActivateEvent = function () {
 		return function (context: vscode.ExtensionContext) {
 
 			// const sample = container.build('sample')();
@@ -26,20 +26,20 @@ module ExtensionActivation {
 		}
 	}
 
-	export function getDeactivationEvent(){
-		return function(){
-			
+	getDeactivationEvent = function () {
+		return function () {
+
 		}
 	}
 
 }
 
-
-export function activate(context: vscode.ExtensionContext){
-	ExtensionActivation.getActivateEvent()(context);
+const extensionActivation = new ExtensionActivation();
+export function activate(context: vscode.ExtensionContext) {
+	extensionActivation.getActivateEvent()(context);
 }
 
-export function deactivate(){
-	ExtensionActivation.getDeactivationEvent()();
+export function deactivate() {
+	extensionActivation.getDeactivationEvent()();
 }
 
