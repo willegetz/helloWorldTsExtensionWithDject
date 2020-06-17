@@ -63,3 +63,5 @@ typings/
 out
 .vs
 .vscode-test
+src/**/*.js
+src/**/*.js.map
