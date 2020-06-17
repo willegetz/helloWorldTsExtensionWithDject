@@ -1,6 +1,7 @@
 {
 	"name": "helloworld",
 	"displayName": "helloworld",
+	"publisher": "spike",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
@@ -22,6 +23,9 @@
 		]
 	},
 	"scripts": {
+		"build-container": "node ./node_modules/dject-cli/index --build-import-container",
+		"build-tsc": "tsc",
+		"build": "npm run build-container && npm run build-tsc",
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
 		"lint": "eslint src --ext ts",

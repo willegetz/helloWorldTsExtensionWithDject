@@ -1,6 +1,10 @@
 class Sample {
     constructor() {
+        
+    }
 
+    run(){
+        console.log('Instantiating Sample');
     }
 }
 
