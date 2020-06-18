@@ -4,6 +4,6 @@
     "isNodeApplication": true,
     "destinationPath": "${cwd}${pathSeparator}container.ts",
     "modulePaths": [
-        "modules**${pathSeparator}*.ts"
+        "modules${pathSeparator}*.ts"
     ]
 }

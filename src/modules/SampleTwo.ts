@@ -2,7 +2,7 @@ const dependencies = [
     '__container'
 ]
 
-class SampleTwo{
+class SampleTwo {
     constructor(...injectedDependencies){
         const [container] = injectedDependencies;
         const {} = container.buildDependencyMap(dependencies, injectedDependencies);

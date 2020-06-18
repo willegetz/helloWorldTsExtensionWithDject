@@ -1,4 +1,4 @@
-import module0 from '../src/modules/Sample';
+import module0 from '../src/modules/sample';
 import module1 from '../src/modules/SampleTwo';
 
 

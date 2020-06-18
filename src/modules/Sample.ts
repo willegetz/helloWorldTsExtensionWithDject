@@ -1,9 +1,15 @@
 class Sample {
-    constructor(){
-        console.log('Instantiating Sample');
+    private second;
+
+    constructor(
+        sampleTwo
+    ) {
+        this.second = sampleTwo;
+        console.log('In the constructor of Sample');
     }
 
-    run(){
+    run() {
+        this.second.logOutData();
         console.log('Run Sample');
     }
 }
