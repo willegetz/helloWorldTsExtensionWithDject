@@ -20,16 +20,5 @@ describe('Sample class', function () {
 
             assert.equal(true, wasCalledOnce);
         });
-
-        it('resolves the file path uri', function () {
-            sinon.replace(vscode.Uri, 'parse', function(path){
-                return 'Boo!'
-            });
-            
-            const filePath = 'c:/some/folder/path.txt';
-            const fileUri = vscode.Uri.parse(filePath);
-
-            assert.equal('', fileUri)
-        })
     });
 });

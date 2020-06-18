@@ -1,36 +1,24 @@
 const dependencies = [
-    '__container',
-    'vscodeFactory'
+    '__container'
 ]
 
 class SampleTwo {
-    private vscodeFactory;
-
-    constructor(...injectedDependencies){
+    constructor(...injectedDependencies) {
         const [container] = injectedDependencies;
-        const {
-            vscodeFactory
-        } = container.buildDependencyMap(dependencies, injectedDependencies);
-
-        this.vscodeFactory = vscodeFactory;
+        const { } = container.buildDependencyMap(dependencies, injectedDependencies);
 
         console.log('In the constructor of Sample Two');
     }
 
-    logOutData(){
+    logOutData() {
         console.log('Sample Two is logging out data');
-
-        const uri = this.vscodeFactory.getUri()
-        const uriPath = uri.parse('d:/another/path/exists.txt');
-
-        console.log('SampleTwo logs out the following URI: ', uriPath)
     }
 }
 
 SampleTwo['@instantiable'] = true;
 SampleTwo['@dependencies'] = dependencies;
 
-export default{
+export default {
     name: 'sampleTwo',
     value: SampleTwo
 }
