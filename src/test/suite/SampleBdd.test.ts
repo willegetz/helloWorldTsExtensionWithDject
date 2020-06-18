@@ -4,16 +4,16 @@ import * as sinon from 'sinon';
 import { assert } from 'chai';
 
 describe('With BDD - Sample class', function () {
-    console.log('BDD registered modules: ', container.getRegisteredModules());
     let sample;
     let runSpy;
-    let vscodeUri;
+    let vscode;
+
 
     beforeEach(function () {
         sample = container.build('sample');
         runSpy = sinon.spy(sample, "run");
 
-        vscodeUri = container.build('vscodeFactory').getUri();
+        vscode = container.build('vscodeFactory').getVsCode();
     })
 
     describe('BDD Run', () => {
@@ -27,7 +27,7 @@ describe('With BDD - Sample class', function () {
         it('BDD resolves the file path uri', function () {
             const filePath = 'c:/some/folder/path.txt';
 
-            const actualUri = vscodeUri.parse(filePath);
+            const actualUri = vscode.Uri.parse(filePath);
             const expectedUri = {
                 "_formatted": null,
                 "_fsPath": null,

@@ -1,18 +1,19 @@
-// import * as vscode from 'vscode';
-
 class VscodeFactory {
-    localVscode;
+    preservedVscode;
 
     constructor(
         vscode
     ) {
-        this.localVscode = vscode.Uri;
+        this.preservedVscode = vscode;
     }
 
-    getUri() {
-        console.log('Trying to get vscode.Uri');
-        return this.localVscode;
+    countKeys() {
+        const keys = Object.keys(this.preservedVscode);
+        console.log('Preserved Key count: ', keys.length);
+    }
 
+    getVsCode() {
+        return this.preservedVscode;
     }
 }
 
