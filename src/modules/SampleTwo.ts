@@ -1,5 +1,3 @@
-import vscodeFactory from "./vscodeFactory";
-
 const dependencies = [
     '__container',
     'vscodeFactory'
