@@ -1,5 +1,7 @@
 import module0 from '../src/modules/sample';
 import module1 from '../src/modules/SampleTwo';
+import module2 from '../src/modules/vscode1';
+import module3 from '../src/modules/vscodeFactory';
 
 
 const dject = require('dject');
@@ -11,6 +13,12 @@ container.register(module0.value, module0.name);
 
 container.copyProps(module1.value, module1);
 container.register(module1.value, module1.name);
+
+container.copyProps(module2.value, module2);
+container.register(module2.value, module2.name);
+
+container.copyProps(module3.value, module3);
+container.register(module3.value, module3.name);
 
 
 export default container;
