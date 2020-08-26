@@ -12,7 +12,8 @@
 	],
 	"activationEvents": [
 		"onCommand:helloworld.helloWorld",
-		"onCommand:helloworld.showModal"
+		"onCommand:helloworld.showModal",
+		"onCommand:helloworld.openToSite"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
@@ -24,6 +25,10 @@
 			{
 				"command": "helloworld.showModal",
 				"title": "Show Modal"
+			},
+			{
+				"command": "helloworld.openToSite",
+				"title": "Open to Site"
 			}
 		]
 	},

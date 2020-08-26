@@ -11,6 +11,9 @@ export function activate(context: vscode.ExtensionContext) {
 	const sampleTwo = container.build('sampleTwo');
 	sampleTwo.logOutData();
 
+	const sampleThree = container.build('sampleThree');
+	sampleThree.logOutData();
+
 	const localVscode = container.build('vscodeFactory').getVsCode();
 	const webUrl = 'https://github.com/cmstead/dject';
 
@@ -35,14 +38,24 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 		});
 
-		let showModal = vscode.commands.registerCommand(
-			'helloworld.showModal',
-			() => {
-				nonDjectSample.showModalMessage('Hello out there!');
-			}
-		)
+	let showModal = vscode.commands.registerCommand(
+		'helloworld.showModal',
+		() => {
+			nonDjectSample.showModalMessage('Hello out there!');
+		}
+	)
+
+		const otherWebUrl = 'https://github.com/cmstead';
+	let openLink = vscode.commands.registerCommand(
+		'helloworld.openToSite',
+		() => {
+			sampleThree.navigateToSite(otherWebUrl);
+		}
+	);
 
 	context.subscriptions.push(helloWorld);
+	context.subscriptions.push(showModal);
+	context.subscriptions.push(openLink);
 }
 
 export function deactivate() { }

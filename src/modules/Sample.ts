@@ -2,7 +2,7 @@ class Sample {
     private second;
 
     constructor(
-        sampleTwo,
+        sampleTwo
     ) {
         console.log('In the constructor of Sample');
         this.second = sampleTwo;
