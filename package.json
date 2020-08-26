@@ -11,7 +11,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:helloworld.helloWorld"
+		"onCommand:helloworld.helloWorld",
+		"onCommand:helloworld.showModal"
 	],
 	"main": "./src/extension.js",
 	"contributes": {
@@ -19,6 +20,10 @@
 			{
 				"command": "helloworld.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "helloworld.showModal",
+				"title": "Show Modal"
 			}
 		]
 	},

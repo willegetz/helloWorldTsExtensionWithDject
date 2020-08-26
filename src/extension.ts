@@ -1,6 +1,8 @@
 import * as vscode from 'vscode';
 import container from './container';
 
+import * as nonDjectSample from './mixedModules/NonDjectSample';
+
 export function activate(context: vscode.ExtensionContext) {
 
 	const sample = container.build('sample');
@@ -17,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	console.log('Congratulations, your extension "helloworld" is now active!');
 
-	let disposable = vscode.commands.registerCommand(
+	let helloWorld = vscode.commands.registerCommand(
 		'helloworld.helloWorld',
 		() => {
 			vscode.window.showInformationMessage(
@@ -33,7 +35,14 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 		});
 
-	context.subscriptions.push(disposable);
+		let showModal = vscode.commands.registerCommand(
+			'helloworld.showModal',
+			() => {
+				nonDjectSample.showModalMessage('Hello out there!');
+			}
+		)
+
+	context.subscriptions.push(helloWorld);
 }
 
 export function deactivate() { }
