@@ -1,4 +1,4 @@
-import module0 from '../src/modules/sample';
+import module0 from '../src/modules/Sample';
 import module1 from '../src/modules/SampleTwo';
 import module2 from '../src/modules/vscodeFactory';
 
