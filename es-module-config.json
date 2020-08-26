@@ -4,7 +4,7 @@
     "isNodeApplication": true,
     "destinationPath": "${cwd}${pathSeparator}container.ts",
     "modulePaths": [
-        "mixedModules${pathSeparator}otherSamples/**/*.ts",
+        "mixedModules${pathSeparator}otherSamples${pathSeparator}**/*.ts",
         "modules${pathSeparator}*.ts"
     ]
 }
